@@ -2,20 +2,26 @@
     <div class="content">
         <h3> Calculadora de Potencia</h3>
         <label> Corriente</label>
-         <input class="inputs" type="number" v-model="corriente">
+        <div>
+          <input class="inputs" type="number" v-model="corriente"> <span>A</span>
+        </div>
          <br>
          
         <label> Voltaje</label>
-         <input class="inputs" type="number" v-model="voltaje">
+         <div>
+                        <input class="inputs" type="number" v-model="voltaje"> <span>V</span>
+         </div>                                    
          <br>
         <label> Resistencia</label>
-        <input class="inputs" type="number" v-model="resistencia">
+        <div>
+            <input class="inputs" type="number" v-model="resistencia"> <span>Ω</span>
+        </div>
           <br>
-                <br>
+                 <br>
         <button class="button" @click="calculatePower()">Calcular</button>
         <br>
         <br>
-        <label>La potencia es: {{potencia}} </label>
+        <label>La potencia es: {{potencia}} W</label>
     </div>
 </template>
 
@@ -60,12 +66,15 @@
 </script>
 <style>
     .inputs{
-        margin: 10px;  
+        width:100px;
         text-align: center;
+        outline: 0;
+        border-width: 0 0 2px;
     }
     .content{
        display: flex; 
        justify-content: center;
+       align-items: center;
        flex-flow: column;
         
     }
